@@ -1,0 +1,259 @@
+body.aboutBackground {
+    font-family: 'Space Grotesk';
+}
+
+.aboutbgImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.boldAboutMe{
+    font-weight: bolder;
+    color: #5b755b;
+}
+
+.aboutContainer {
+    max-width: 900px;
+    margin-left:125px;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    background: rgba(245, 247, 233, 0.92);
+    padding: 48px 36px 36px 36px;
+    display: flex;
+    gap: 50px;
+    animation: fadeInaboutContainer 1s 0.7s cubic-bezier(0.5, 0, .2, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInaboutContainer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.aboutImage {
+    width: 250px;
+    border-radius: 18px;
+    border: 3px solid #b4c7c0;
+    object-fit: cover;
+    animation: fadeInImage 1.2s 0.7s cubic-bezier(0.5, 0, .2, 1) both;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.aboutContent {
+    min-height: 450px;
+    min-width: 240px;
+    animation: aboutContentFadeIn 1.2s 0.7s cubic-bezier(0.5, 0, .2, 1) forwards;
+}
+
+@keyframes aboutContentFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.aboutTitle {
+    font-size:40px;
+    font-family: 'Antic Didone', serif;
+    color: #3a4d39;
+    margin-bottom: 12px;
+    letter-spacing: 1.5px;
+    animation: fadeInaboutTitle 1.2s 0.9s cubic-bezier(0.5, 0, .2, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInaboutTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aboutText {
+    font-size: 18px;
+    color: #222;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    animation: fadeInText 1.2s 1.3s cubic-bezier(0.5, 0, .2, 1) both;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aboutHighlight {
+    background: #5b755b;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    margin-bottom: 30px;
+    animation: fadeInaboutHighlight 1.2s 1.3s cubic-bezier(0.5, 0, .2, 1) both;
+}
+
+@keyframes fadeInaboutHighlight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* global navbar */
+.menu {
+    list-style: none;
+    margin: 0px;
+    display: inline-flex;
+}
+
+.menu a {
+    color: #5b755b;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    bottom: 0px;
+    height: 3px;
+    background: linear-gradient(90deg, #acbc93 0%, #5b755b 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.menu a:hover {
+    background: rgba(172, 188, 147, 0.10);
+    color: #222;
+    cursor: pointer;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    z-index: 10;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.navbar-title {
+    color: #5b755b;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 900px) {
+    .aboutContainer {
+        flex-direction: column;
+        padding: 24px 4vw;
+        gap: 24px;
+        margin-left: 0;
+        margin-top: 12vw;
+        max-width: 98vw;
+    }
+    .aboutImage {
+        max-width: 90vw;
+        width: 220px;
+        margin: 0 auto 18px auto;
+        display: block;
+    }
+    .aboutContent {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+    }
+    .aboutTitle {
+        font-size: 2rem;
+    }
+    .aboutText {
+        font-size: 15px;
+    }
+    .menu {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .menu a {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 600px) {
+    .aboutContainer {
+        padding: 8px 2vw;
+        margin-top: 18vw;
+    }
+    .aboutImage {
+        width: 120px;
+        max-width: 98vw;
+    }
+    .aboutTitle {
+        font-size: 1.2rem;
+    }
+    .aboutText {
+        font-size: 12px;
+    }
+    .aboutHighlight {
+        font-size: 13px;
+        padding: 3px 6px;
+    }
+    .menu a {
+        font-size: 12px;
+        padding: 0 6px;
+    }
+}
+
+
+

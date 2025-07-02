@@ -1,0 +1,364 @@
+.contactLeftTitle {
+    font-weight: 600;
+    font-size: 40px;
+    justify-content: center;
+    display: absolute;
+    margin-bottom: 800%;
+    margin-left: 50%;
+}
+
+.contactDivider{
+    background-color: #5b755b;
+    margin-bottom: 50px;
+    animation: fadeIncontactDivider 1s cubic-bezier(0.5, 0, .2, 1);
+}
+
+@keyframes fadeIncontactDivider {
+    0% {
+        opacity: 0;
+        transform: translateX(-40vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+}
+
+.contactDivider2{
+    background-color: #5b755b;
+    width: 0.3vw;
+    height: 90vh;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    animation: fadeIncontactDivider2 1s 1.4s cubic-bezier(0.5, 0, .2, 1) both;
+}
+
+@keyframes fadeIncontactDivider2 {
+    from {
+        opacity: 0;
+        transform: translateY(40vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+}
+
+.boldContactMe{
+    font-weight: bolder;
+    color: #5b755b;
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    z-index: 10;
+    box-shadow: 0 2px 12px 0 rgba(172, 188, 147, 0.08);
+}
+
+.navbar-title {
+    color: #5b755b;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0px;
+    display: inline-flex;
+}
+
+.menu a {
+    color: #5b755b;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    bottom: 0px;
+    height: 3px;
+    background: linear-gradient(90deg, #acbc93 0%, #5b755b 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.menu a:hover {
+    background: rgba(172, 188, 147, 0.10);
+    color: #222;
+    cursor: pointer;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+body {
+    font-family: 'Segoe UI';
+    background-color: #e5eaca;
+    color: #222;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.contactScreen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto auto;
+    max-width: 88vw;
+}
+
+.formContainer {
+    background: rgba(255,255,255,0.98);
+    border-radius: 18px;
+    padding: 40px 30px 36px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 50%;
+    border: 1.5px solid #e0e5d8;
+    font-size: 18px;
+}
+
+.formContainer:hover {
+    border: 2px solid #889474;
+}
+
+.contactImage {
+    border-radius: 18px;
+    border: 3px solid #828677;
+    width: 400px;
+    height: 350px;
+    background: #fff;
+    margin-top: 5%;
+}
+
+.GIFContainer {
+    width: 100vw;
+    height: 40vw;
+    text-align: left;
+}
+
+.gifText {
+    margin-top: 3%;
+    position: absolute;
+    top: 7vh;
+    left: 10vw;
+    color: #75947e;
+    font-size: 10vw;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: 20px;
+    animation: gifTextFadeIn 1.5s cubic-bezier(0.4, 2 , 0.3, 3);
+    transition: transform 0.5s;
+    text-decoration: none;
+}
+
+.gifText span {
+    display: block;
+    width: 100%;
+    color: #5e7866;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.gifText:hover {
+    transform: translateY(-10%);
+    text-decoration: none;
+}
+
+
+@keyframes gifTextFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(7vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0vw);
+    }
+}
+
+    .contactGIF {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 100px;
+        opacity: 0.7;
+    }
+
+    hr {
+        height: 6px;
+        background-color: #738b72;
+        margin-top: 0px;
+        margin-bottom: 100px;
+        width: 100vw;
+    }
+
+    .formContainer input[type="text"],
+    .formContainer input[type="email"],
+    .formContainer textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-family: 'Segoe UI';
+        font-size: 12px;
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1.5px solid #acbc93;
+        background: #f8fbe9;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 4px 0 rgba(172, 188, 147, 0.05);
+    }
+
+    .connect {
+        font-weight: 500;
+        font-size: 2.3rem;
+        color: #546c54;
+        font-family: 'Inria Serif', serif;
+        border-bottom: 2.5px solid #9fad9c;
+    }
+
+    @media (max-width: 900px) {
+        .contactScreen {
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            max-width: 98vw;
+            padding: 0 2vw;
+        }
+
+        .formContainer {
+            width: 90vw;
+            min-width: 0;
+            font-size: 16px;
+            padding: 24px 10px 20px 10px;
+        }
+
+        .contactImage {
+            width: 90vw;
+            max-width: 340px;
+            height: auto;
+            margin: 24px auto 24px auto;
+            display: block;
+        }
+
+        .gifText {
+            font-size: 5vw;
+            top: 20vh;
+            left: 50vw;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .navbar {
+            flex-direction: column;
+            padding: 10px 8px;
+            width: 100vw;
+        }
+
+        .navbar-title {
+            font-size: 16px;
+        }
+
+        .menu a {
+            font-size: 14px;
+            padding: 0 10px;
+        }
+
+        .formContainer {
+            font-size: 14px;
+            padding: 12px 2vw 12px 2vw;
+        }
+
+        .contactImage {
+            width: 80vw;
+            max-width: 220px;
+        }
+
+        .GIFContainer {
+            height: 50vw;
+        }
+
+        .gifText {
+            font-size: 7vw;
+            top: 15vh;
+        }
+
+        .formContainer input[type="text"],
+        .formContainer input[type="email"],
+        .formContainer textarea {
+            font-size: 13px;
+        }
+    }
+
+    .submitClass:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #ffffff;
+        z-index: -1;
+        transition: 700ms;
+    }
+
+    .submitClass:hover {
+        color: #4f7459;
+    }
+
+    .submitClass:hover:after {
+        width: 100%;
+    }
+
+    button[type='submit'] {
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 4px;
+        margin-top: 12px;
+        cursor: pointer;
+        width: 200px;
+        display: block;
+        margin: auto auto;
+        padding: 15px 25px;
+        border: none;
+        border-radius: 15px;
+        color: #ffffff;
+        z-index: 1;
+        background: #4f7459;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        overflow: hidden;
+    }

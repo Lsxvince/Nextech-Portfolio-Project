@@ -1,0 +1,216 @@
+/* the piano stuff */
+.exploreText{
+    font-family: "Bodoni Moda", serif;
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    background-color: #667963;
+    padding: 40px 40px;
+    animation: exploreTextFadeIn 1.3s 0.3s cubic-bezier(0.5, 0, .2, 1) forwards;
+}
+
+@keyframes exploreTextFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-70%);
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.contactDivider2{
+    align-
+}
+
+.contactDivider{
+    height: 2px;
+    background-color: #5b755b;
+    margin: 20px auto;
+}
+
+.boldExplore{
+    font-weight: bolder;
+    color: #5b755b;
+}
+
+.pianoOctave {
+    position: relative;
+    width: 100vw;
+    height: 37vw;
+    animation: fadeInImage 1.5s 0.7s cubic-bezier(0.5, 0, .2, 1) both;
+}
+
+@keyframes FadeInpianoOctave{
+    from{
+        transform: translateY(-50px);
+        opacity: 0.2;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.whiteKeysContainer {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 37vw;
+    z-index: 1;
+}
+
+.whiteKey {
+    flex: 1 1 0;
+    height: 100%;
+    background: #fff;
+    border: 2px solid #bbb;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.blackKeysContainer {
+    position: absolute;
+    left: 8.5vw;
+    z-index: 2;
+}
+
+.blackKey {
+    position: absolute;
+    width: 80vw;
+    min-width: 1px;
+    max-width: 92px;
+    height: 20vw;    background: #222;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.whiteKey.active {
+    background: #9eb99a;
+    box-shadow: 0 0 8px 2px #9eb99a;
+    transition: background 0.1s, box-shadow 0.1s;
+}
+.blackKey.active {
+    background: #9eb99a;
+    box-shadow: 0 0 20px 6px #9eb99a;
+    transition: background 0.1s, box-shadow 0.1s;
+}
+
+
+.navbar {
+    background: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    z-index: 3;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.navbar-title {
+    color: #5b755b;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+.menu {
+    list-style: none;
+    margin: 0px;
+    display: inline-flex;
+}
+
+.menu a {
+    color: #5b755b;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: -6px;
+    height: 3px;
+    background: linear-gradient(90deg, #acbc93 0%, #5b755b 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.menu a:hover {
+    background: rgba(172, 188, 147, 0.10);
+    color: #222;
+    cursor: pointer;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 900px) {
+    .pianoOctave {
+        width: 98vw;
+        height: 60vw;
+    }
+    .whiteKeysContainer, .blackKeysContainer {
+        width: 98vw;
+        height: 60vw;
+    }
+    .blackKey {
+        max-width: 60px;
+        height: 32vw;
+    }
+    .exploreText {
+        font-size: 18px;
+        padding: 24px 8px;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 10px 8px;
+        width: 100vw;
+    }
+    .navbar-title {
+        font-size: 16px;
+    }
+    .menu a {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 600px) {
+    .pianoOctave {
+        width: 100vw;
+        height: 90vw;
+    }
+    .whiteKeysContainer, .blackKeysContainer {
+        width: 100vw;
+        height: 90vw;
+    }
+    .blackKey {
+        max-width: 32px;
+        height: 18vw;
+    }
+    .exploreText {
+        font-size: 13px;
+        padding: 12px 2vw;
+    }
+    .navbar-title {
+        font-size: 13px;
+    }
+    .menu a {
+        font-size: 12px;
+        padding: 0 6px;
+    }
+}

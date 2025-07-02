@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html html {
+    scroll-behavior: smooth;
+}
+<head>
+    <title>Home | Vincent's Keynotes</title>
+    <title>Vincent's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Domine:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-title"><a href="frontpage.html" style="color:#5b755b;">Vincent's Keynotes</a></span>
+        <ul class="menu">
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="contactMe.html">Contact</a></li>
+            <li><a class = "boldFrontpage">Home</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <div class="revealBox">
+            <div class="reveal lineup">Hi,</div>
+            <div class="reveal lineup">I'm Vincent!</div>
+        </div>
+        <img src="images/greenPiano.jpg" class="Image" alt="Green Piano">
+        <button class="arrowButton" onclick="document.querySelector('.secondBackground').scrollIntoView({behavior: 'smooth'});" aria-label = "Go to Accomplishments">↓</button>
+        <div class="peace">
+            <h2>Peace of Mind</h2>
+        </div>
+        <div class="video">
+            <a href="images/IMG_2583 (1).mp4" style="color:inherit;">Video</a>
+        </div>
+    </div>
+    <span class="firstDescription">
+        I am a Nextech Catapult aspiring to implement computer science into financial analysis and this is my digital portfolio for Nextech.
+    </span>
+    <div class="secondBackground">
+        <div class="secondContent">
+            <div class="secondCenter">
+                <h4 class="accomplishmentsTitle">Accomplishments</h4>
+                <br>
+                <p class='tennis'><a href="https://www.ihsaa.org/sports/boys/tennis/team/2024-25-tournament?round=sectionals">—  Tennis Sectionals Champion  —</a></p>
+                <p class='ISSMA'><a href="https://www.issma.net/seinfo.php">—  ISSMA Gold Medal with Distinction  —</a></p>
+                <p class='Buzzfeed'><a href="http://127.0.0.1:3004/index.html">—  Buzzfeed Style Quiz  —</a></p>
+                <p class='chooseAdventure'><a href="http://127.0.0.1:3002/index.html">—  Choose Your Own Adventure Game  —</a></p>
+            </div>
+            <div class="accomplishmentImage">
+                <img src="images/star.webp" alt="Accomplishment Image" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

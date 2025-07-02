@@ -1,0 +1,625 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.boldFrontpage{
+    font-weight: bolder;
+    color: #5b755b;
+}
+
+.header {
+    background-color: #657069;
+    color: #f1f1f1;
+    text-align: left;
+    font-size: 10px;
+    padding-left: 100px;
+    padding-right: 700px;
+    position: relative;
+    height: 100vh;
+    padding-bottom: 75px;
+}
+
+.Image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    opacity: 1;
+    border-radius: 18px;
+    border: 4px solid #7f8a82;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1), border 0.4s cubic-bezier(.4,0,.2,1);
+    animation: imageRevealWipe 1.5s 0.2s cubic-bezier(.4,0,.2,1) forwards;
+    opacity: 0;
+}
+
+@keyframes imageRevealWipe {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }   
+}
+
+@media (hover: hover) {
+    .Image:hover {
+        transform: scale(0.995);
+        border: 3px solid #5f7e7d;
+    }
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    z-index: 3;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.navbar-title {
+    color: #5b755b;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0px;
+    display: inline-flex;
+}
+
+.menu a {
+    color: #5b755b;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: -6px;
+    height: 3px;
+    background: linear-gradient(90deg, #acbc93 0%, #5b755b 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.menu a:hover {
+    background: rgba(172, 188, 147, 0.10);
+    color: #222;
+    cursor: pointer;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.peace {
+    font-size: 35px; 
+    color: #e1e7e4;
+    position: relative;
+    left: -63px;
+    bottom: 400px;
+    width: 10px;
+    letter-spacing: 5px;
+    font-family: 'Antic Didone', serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.video {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: transparent;
+    background: #e4e4e4;
+    background-clip: text;
+    position: relative;
+    left: -15px;
+    bottom: 400px;
+    cursor: pointer;
+}
+
+.video:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 5.5%;
+    margin-top: 5px;
+    background: #043523;
+    border-radius: 2px;
+    transition: width 0.3s;
+    background: linear-gradient(90deg, #b4c7c0 0%, #acbc93 100%);
+}
+
+.video:hover::after {
+    width: 10%;
+    background: linear-gradient(90deg, #6b9494 0%, #5b755b 100%);
+}
+
+.firstDescription {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    font-size: 16px;
+    width: 30%;
+    color: #f1f1f1;
+    opacity: 0;
+    animation: firstDescriptionFadeIn 1.2s 0.7s cubic-bezier(0.5, 0, .2, 1) forwards;
+    font-family: "Antic Didone", serif;
+    font-weight: 50px;
+}
+
+@keyframes firstDescriptionFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.revealBox {
+    flex-direction: column;
+    border: 2px solid #b4c7c0;
+    border-radius: 5px;
+    padding: 30px 60px;
+    backdrop-filter: blur(6px);
+    background: rgba(192, 148, 148, 0.05);
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-family: "Antic Didone", serif;
+    font-size: 100px;
+}
+
+.reveal {
+    font-size: 70px;
+    font-weight: bold;
+    color: #27099200;
+    --g: linear-gradient(rgb(255, 255, 255) 0 0) no-repeat;
+    background: var(--g), var(--g);
+    background-size: 0% 100%;
+    -webkit-background-clip: padding-box, text;
+    animation:
+        t 1.2s 0.5s both,
+        b 1.2s 1.3s both;
+}
+
+.reveal.lineup {
+    margin-top: auto;
+}
+
+@keyframes t {
+    to {
+        background-size: 150% 100%
+    }
+}
+
+@keyframes b {
+    to {
+        background-position: -200% 0, 0 0
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding-left: 4vw;
+        padding-bottom: 200px;
+        font-size: 13px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px 8px;
+        width: 100vw;
+    }
+
+    .navbar-title {
+        font-size: 16px;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .Image {
+        max-width: 90vw;
+        padding-top: 0px;
+        margin-top: 40px;
+    }
+
+    .Image2{
+        width: 50px;
+        height: 50px;
+    }
+
+    .firstDescription {
+        position: static;
+        display: block;
+        width: 90vw;
+        font-size: 13px;
+        margin: 16px 0 0 0;
+        left: 0;
+        top: 0;
+        font-family: "Schibsted Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+
+    .revealBox {
+        position: static;
+        width: 90vw;
+        margin: 20px 0;
+        padding: 18px 10px;
+    }
+
+    .reveal {
+        font-size: 36px;
+    }
+
+    .peace {
+        position: static;
+        font-size: 22px;
+        left: 0;
+        bottom: 0;
+        margin: 18px 0 0 0;
+        font-family: 'Antic Didone', serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .video {
+        position: static;
+        font-size: 16px;
+        margin: 18px 0 0 0;
+    }
+
+    .accomplishmentsImage {
+        min-width: 180px;
+        min-height: 180px;
+        margin-left: 10px;
+        object-fit: cover;
+        width:320px;
+        height:320px;
+        object-fit:cover;
+        border-radius:12px;
+        border:3px solid #b4c7c0;
+        background:#eaeaea;"
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding-left: 2vw;
+        padding-bottom: 100px;
+        font-size: 11px;
+    }
+
+    .navbar-title {
+        font-size: 13px;
+    }
+
+    .menu a {
+        font-size: 12px;
+        padding: 0 6px;
+    }
+
+    .Image {
+        max-width: 98vw;
+        padding-top: 0px;
+        margin-top: 20px;
+    }
+
+    .firstDescription {
+        width: 98vw;
+        font-size: 11px;
+    }
+
+    .revealBox {
+        width: 98vw;
+        padding: 10px 2vw;
+    }
+
+    .reveal {
+        font-size: 22px;
+    }
+
+    .peace {
+        font-size: 15px;
+    }
+
+    .video {
+        font-size: 12px;
+    }
+
+    .carousel-placeholder-container {
+        min-width: 100px;
+        min-height: 100px;
+        margin-left: 0;
+    }
+    .carousel-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+}
+/* the stuff for accomplishments */
+
+.accomplishmentsTitle {
+    text-decoration: underline;
+    text-underline-offset: 70%;
+    font-size: 200%;
+    margin-bottom: 13%;
+    color: #ded5c9;
+    font-family: 'Antic Didone';
+    letter-spacing: 7px;
+    transition: 1s ease-in-out;
+}
+
+.secondBackground {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(86, 105, 105); 
+    width: 100vw;
+    padding: 5% 0% 7% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondContent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    gap: 4vw;
+}
+
+.arrowButton {
+    position: absolute;
+    bottom:4%;
+    right: 45%;
+    width: 4%;
+    height: 7%;
+    border-radius: 50%;
+    background: #f1f1f1;
+    border: 2px #747f79;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
+    color: #627e6e;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.arrowButton:hover {
+    background: #cfd1c4;
+    transform: translateY(4px);
+}
+
+.Image2 {
+    width: 30vw;
+    height: 70vh;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 4px solid #949c85;
+    margin-left: 150px;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.Image2.fading {
+    opacity: 0;
+}
+
+.secondCenter{
+    margin-left: 15vw;
+    text-align: center;
+    font-family: "Antic Didone", serif; 
+    font-size: 20px;
+    font-weight: 500px;    
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    
+}
+
+.secondCenter p:hover a{
+    background-color: #f5eadc;
+    color: #202a20;
+    border-radius: 6px;
+    transform: scale(1.04);
+    transition: all 0.18s cubic-bezier(.4,0,.2,1);
+    font-weight: 100px ;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.secondCenter p a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.secondCenter p a::after {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: -6px;
+  height: 3px;
+  background-color: #e8eccd;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.secondCenter p:hover a::after,
+.secondCenter p:focus-within a::after {
+  transform: scaleX(1.3);
+}
+
+.accomplishmentImage {
+    width: 320px;
+    height: 300px;
+    margin-left: 40px;
+    margin-top: 40px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #b4c7c0;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.starImg, .tennisImg, .issmaImg, .buzzfeedImg, .chooseImg {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 1200px) {
+    .secondContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+    }
+    .accomplishmentImage {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .accomplishmentImage {
+        width: 180px;
+        height: 180px;
+        min-width: 100px;
+        min-height: 100px;
+        margin-left: 0;
+        margin-top: 18px;
+    }
+    .secondContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+    }
+    .secondCenter {
+        margin-left: 0;
+    }
+}
+@media (max-width: 600px) {
+    .accomplishmentImage {
+        width: 100px;
+        height: 100px;
+        min-width: 60px;
+        min-height: 60px;
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    .secondContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 1vw;
+    }
+    .secondCenter {
+        margin-left: 0;
+    }
+}
+
+/* New CSS for accomplishment items */
+.accomplishment-item {
+  position: relative;
+  margin: 24px 0;
+  padding-left: 32px;
+  font-size: 1.18em;
+  letter-spacing: 1.5px;
+  transition: color 0.2s, letter-spacing 0.3s;
+}
+.accomplishment-item .accent-bar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0.2);
+  width: 8px;
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #b4c7c0 0%, #5b755b 100%);
+  opacity: 0.7;
+  transition: box-shadow 0.3s, transform 0.4s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 0 0px 0px #5b755b00;
+}
+.accomplishment-item:hover .accent-bar,
+.accomplishment-item:focus-within .accent-bar {
+  box-shadow: 0 0 16px 4px #5b755b55;
+  transform: translateY(-50%) scaleX(1.2) scaleY(1.1);
+  opacity: 1;
+}
+.accomplishment-item a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.2s, letter-spacing 0.3s;
+}
+.accomplishment-item a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 3px;
+  background: linear-gradient(90deg, #acbc93 0%, #5b755b 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+.accomplishment-item:hover a,
+.accomplishment-item:focus-within a {
+  color: #ded5c9;
+  letter-spacing: 2.5px;
+}
+.accomplishment-item:hover a::after,
+.accomplishment-item:focus-within a::after {
+  transform: scaleX(1);
+}
+
+

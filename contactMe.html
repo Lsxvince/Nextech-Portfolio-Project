@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Domine:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contactMe.css">
+<script defer src="contactMe.js"></script>
+<head>
+    <title>Contact Me | Vincent's Keynotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav class="navbar">
+         <span class="navbar-title"><a href="frontpage.html" style = "color:#5b755b;">Vincent's Keynotes</a></span>
+        <ul class="menu">
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a class = "boldContactMe">Contact</a></li>
+            <li><a href="frontpage.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class='GIFContainer'>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRttNgxDNnZmQQQRDlgFGVbFnpldhhVVCqWmXjDtqmCjgcWFfhKxTtFCVxlpDxSxkmCWlgv" class="gifText" style="color:inherit">
+            <span>GET  IN</span>
+            <span>TOUCH</span>
+            <span>WITH  ME</span>
+        </a>
+    </div>
+    <hr  style = 'width: 95%' class='contactDivider'>
+    <div class='contactScreen'>
+        <div class="formContainer">
+            <form action="https://formspree.io/f/mvgrbqwn" method="POST">
+                <div class='contactTitleLeft'>
+                    <h2 class='connect'>Connect</h2>
+                </div>
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type='submit' class="submitClass">Submit</button>
+            </form>
+        </div>
+        <hr class = 'contactDivider2'>
+        <img class='contactImage' alt='pianoLogo' src='images/Screenshot 2025-06-20 082139.png' height='300px' width='300px'>
+    </div>
+</body>
+
+</html>
